@@ -28,6 +28,7 @@ while True:
         print("Trying to connect...")
         for adv in ble.start_scan(ProvideServicesAdvertisement):
             if UARTService in adv.services:
+                #error is probably from line32, bc if just using the start_scan function, code is able to run
                 uart_connection = ble.connect(adv)
                 print("Connected")
                 break
